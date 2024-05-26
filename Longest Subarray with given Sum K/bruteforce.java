@@ -3,7 +3,7 @@
 
 import java.util.*;
 
-public class tUf {
+public class Main {
     public static int getLongestSubarray(int []a, long k) {
     int n= a.length;
     int maxlen=0;
