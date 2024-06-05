@@ -13,12 +13,12 @@ public class Main {
         HashSet < Integer > set = new HashSet < > ();
         for (int i = 0; i < arr.length; i++) {
             set.add(arr[i]);
-        }
+        } // NlogN 
         int k = set.size();
         int j = 0;
         for (int x: set) {
             arr[j++] = x;
-        }
+        } //N 
         return k;
     }
 }
