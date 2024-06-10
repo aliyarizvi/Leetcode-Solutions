@@ -1,5 +1,6 @@
-import java.util.*;
+//TLE
 
+import java.util.*;
 public class Main {
     public static List<List<Integer>> triplet(int n, int[] arr) {
         Set<List<Integer>> st = new HashSet<>();
