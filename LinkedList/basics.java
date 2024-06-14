@@ -84,7 +84,51 @@ class LinkedList {
         }
         
         return head;
-    }  
+    }
+    public static Node delete_first(Node head){
+        Node temp=head;
+        if(head==null)
+        return head;
+        
+        else{
+        System.out.println("Deleted item: "+temp.data);
+        head=head.next;
+        }
+        return head;
+    }
+    public static Node delete_last(Node head){
+        Node temp=head;
+        if(head==null || head.next==null)
+        return null;
+        
+        else
+        while(temp.next.next!=null){
+            temp=temp.next;
+        }
+        temp.next=null;
+        return head;
+    }
+    public static Node deleteAt_Pos(Node head,int pos){
+        if(head==null || head.next==null)
+        return null;
+        
+        if(pos==1)
+        return delete_first(head);
+        
+        int count=0;
+        Node temp=head;
+        Node prev=null;
+        while(temp!=null){
+            count++;
+            if(count==pos){
+                prev.next=prev.next.next;
+            }
+            prev=temp;
+            temp=temp.next;
+        }
+        return head;
+    }
+    
 }
 
 public class Main {
@@ -94,6 +138,9 @@ public class Main {
         head=LinkedList.insert_first(head,0);
         head=LinkedList.insert_last(head,6);
         head=LinkedList.insertAtPos(head,2,3);
+        head=LinkedList.delete_first(head);
+        head=LinkedList.delete_last(head);
+        head=LinkedList.deleteAt_Pos(head,6);
         LinkedList.printLL(head);
         //System.out.println("Length of linked list: " + LinkedList.lengthofLL(head));
         
